@@ -6,6 +6,16 @@ namespace assignment {
 
     // Tips: для создания пары (pair) используйте функцию std::make_pair
 
+    int j = (int)data.size() - 1;
+
+    for (int i = 0; i < j; i++) {
+      while (i < j && data[i] + data[j] > sum)
+        j--;
+      if (i < j && data[i] + data[j] == sum) {
+        return std::make_pair(i, j);
+      }
+    }
+
     return std::nullopt;
   }
 
